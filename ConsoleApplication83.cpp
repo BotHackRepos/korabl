@@ -7,10 +7,12 @@ int main() {
 	system("color 10");
 	Pramougol obj = Pramougol(CENTER);
 	for (int i = 0; i < 40; ++i) {
+		system("cls");
 		obj.UpdateDirection(LEFT_POZITION);
 		obj.View();
 	}
 	for (int i = 0; i < 40; ++i) {
+		system("cls");
 		obj.UpdateDirection(RIGHT_POZITION);
 		obj.View();
 	}
