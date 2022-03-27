@@ -29,16 +29,7 @@
 #endif
 
 
-
-#define LEFT_AND_UP 1
-#define CENTER_AND_UP 2
-#define RIGHT_AND_UP 3
-#define CENTER_AND_LEFT 4
-#define CENTER 5
-#define CENTER_AND_RIGHT 6
-#define DOWN_AND_LEFT 7
-#define DOWN_AND_CENTER 8
-#define DOWN_AND_RIGHT 9
+enum poz { LEFT_AND_UP, CENTER_AND_UP, RIGHT_AND_UP, CENTER_AND_LEFT, CENTER, CENTER_AND_RIGHT, DOWN_AND_LEFT, DOWN_AND_CENTER, DOWN_AND_RIGHT };
 #define FULLDIR "FULL"
 #define CUBNODIR "NO FULL"
 #define LEFT_POZITION '<'
@@ -62,7 +53,7 @@ struct Pramougol {
     int bl = 0;
     int x[2];
     int y[2];
-    Pramougol(int param) {
+    Pramougol(poz param) {
         switch (param) {
         case LEFT_AND_UP:
             y[0] = 0, y[1] = HEIGHT / 4, x[0] = 0, x[1] = WIDTH / 4;
@@ -182,7 +173,7 @@ struct Pramougol {
 #define PRIKOSPR 1
 #define ERRORCODE -1
 
-int PrikosPramougols(Pramougol* ptr, Pramougol* ptr2)//åñëè 1 - òî ïðèêîñàþòñÿ, åñëè 0 - òî íå ïðèêîñàþòñÿ, åñëè äðóãîå - îøèáêà
+int PrikosPramougols(Pramougol* ptr, Pramougol* ptr2)//Ã¥Ã±Ã«Ã¨ 1 - Ã²Ã® Ã¯Ã°Ã¨ÃªÃ®Ã±Ã Ã¾Ã²Ã±Ã¿, Ã¥Ã±Ã«Ã¨ 0 - Ã²Ã® Ã­Ã¥ Ã¯Ã°Ã¨ÃªÃ®Ã±Ã Ã¾Ã²Ã±Ã¿, Ã¥Ã±Ã«Ã¨ Ã¤Ã°Ã³Ã£Ã®Ã¥ - Ã®Ã¸Ã¨Ã¡ÃªÃ 
 {
     srand(time(0));
     if (ptr->bl == 0) {
